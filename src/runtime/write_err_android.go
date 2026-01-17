@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	writeHeader = []byte{6 /* ANDROID_LOG_ERROR */, 'G', 'o', 0}
+	writeHeader = []byte{7 /* ANDROID_LOG_ERROR */, 'G', 'o', 'E', 'r', 'r', 0}
 	writePath   = []byte("/dev/log/main\x00")
 	writeLogd   = []byte("/dev/socket/logdw\x00")
 
@@ -149,7 +149,7 @@ func writeLogdHeader() int {
 	//   hdr[3:11] log_time defined in <log/log_read.h>
 	//      hdr[3:7] sec unsigned uint32, little endian.
 	//      hdr[7:11] nsec unsigned uint32, little endian.
-	hdr[0] = 0 // LOG_ID_MAIN
+	hdr[0] = 4 // LOG_ID_CRASH
 	sec, nsec, _ := time_now()
 	byteorder.LEPutUint32(hdr[3:7], uint32(sec))
 	byteorder.LEPutUint32(hdr[7:11], uint32(nsec))
