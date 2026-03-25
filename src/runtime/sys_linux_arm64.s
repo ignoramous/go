@@ -14,7 +14,7 @@
 #define AT_FDCWD -100
 
 #define CLOCK_REALTIME 0
-#define CLOCK_MONOTONIC 1
+#define CLOCK_MONOTONIC 7
 
 #define SYS_exit		93
 #define SYS_read		63

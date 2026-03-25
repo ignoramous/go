@@ -365,13 +365,13 @@ noswitch:
 
 	LEAL	8(SP), BX	// &ts (struct timespec)
 	MOVL	BX, 4(SP)
-	MOVL	$1, 0(SP)	// CLOCK_MONOTONIC
+	MOVL	$7, 0(SP)	// CLOCK_MONOTONIC
 	CALL	AX
 	JMP finish
 
 fallback:
 	MOVL	$SYS_clock_gettime, AX
-	MOVL	$1, BX		// CLOCK_MONOTONIC
+	MOVL	$7, BX		// CLOCK_MONOTONIC
 	LEAL	8(SP), CX
 	INVOKE_SYSCALL
 

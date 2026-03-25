@@ -267,7 +267,7 @@ noswitch:
 	SUBQ	$16, SP		// Space for results
 	ANDQ	$~15, SP	// Align for C code
 
-	MOVL	$1, DI // CLOCK_MONOTONIC
+	MOVL	$7, DI // CLOCK_MONOTONIC
 	LEAQ	0(SP), SI
 	MOVQ	runtime·vdsoClockgettimeSym(SB), AX
 	CMPQ	AX, $0

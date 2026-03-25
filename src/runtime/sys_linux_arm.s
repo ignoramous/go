@@ -11,7 +11,7 @@
 #include "textflag.h"
 
 #define CLOCK_REALTIME	0
-#define CLOCK_MONOTONIC	1
+#define CLOCK_MONOTONIC	7
 
 // for EABI, as we don't support OABI
 #define SYS_BASE 0x0
